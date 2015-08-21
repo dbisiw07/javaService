@@ -1,0 +1,8 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                   steam.common.controllers.AppController.index
+GET 	/docs		    steam.common.controllers.DocController.apiDoc
+GET     /commit.txt         controllers.Assets.at(path="/public", file="COMMIT.txt")

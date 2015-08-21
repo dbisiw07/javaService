@@ -1,0 +1,43 @@
+Skeleton Service
+======================
+
+Overview
+------------
+
+The skeleton service provides a way for applications to harvest vampires  
+
+Access to the service is currently provided by a REST API.
+
+
+API
+----------
+
+* `clientMethod($parameters)`
+
+  *Resource*: METHOD /URI
+
+  *Action*:  Perform a skeleton transformation on a vampire 
+  				
+  *Example responses*:
+   * `{"status":1,"data":{"vampire":"transformed"},"details":"added study netmr_12345"}`
+
+
+Client
+----------
+  * [Steam PHP Client](https://se2svn01.asp.gmi.lcl/svn/repo6/Steam/trunk) ships with `class Steam_Client_Skeleton`
+    <pre>
+    /* @var $steamClient Steam_Client_Skeleton */
+    $steamClient = Steam_Factory::getInstance(array('skeleton'=>
+	  array(
+	    'url'=>'http://parenthost:9000',
+		'headers'=> array(
+		  'x-steam-tenantid'=>'xczimi'
+		),
+		'config'=> array()
+	  )
+    ))->getServiceClient('skeleton');
+    
+    $steamClient->clientMethod(**PATAMETER**);
+
+    </pre>
+    	

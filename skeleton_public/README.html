@@ -1,0 +1,47 @@
+<h1>Skeleton Service</h1>
+
+<h2>Overview</h2>
+
+<p>The skeleton service provides a way for applications to harvest vampires  </p>
+
+<p>Access to the service is currently provided by a REST API.</p>
+
+<h2>API</h2>
+
+<ul>
+<li><p><code>clientMethod($parameters)</code></p>
+
+<p><em>Resource</em>: METHOD /URI</p>
+
+<p><em>Action</em>:  Perform a skeleton transformation on a vampire </p>
+
+<p><em>Example responses</em>:</p>
+
+<ul>
+<li><code>{"status":1,"data":{"vampire":"transformed"},"details":"added study netmr_12345"}</code></li>
+</ul></li>
+</ul>
+
+<h2>Client</h2>
+
+<ul>
+<li><p><a href="https://se2svn01.asp.gmi.lcl/svn/repo6/Steam/trunk">Steam PHP Client</a> ships with <code>class Steam_Client_Skeleton</code></p>
+
+<pre>
+/* @var $steamClient Steam_Client_Skeleton */
+$steamClient = Steam_Factory::getInstance(array('skeleton'=>
+  array(
+    'url'=>'http://parenthost:9000',
+    'headers'=> array(
+      'x-steam-tenantid'=>'xczimi'
+    ),
+    'config'=> array()
+  )
+))->getServiceClient('skeleton');
+
+
+$steamClient->clientMethod(**PATAMETER**);
+
+
+</pre></li>
+</ul>
